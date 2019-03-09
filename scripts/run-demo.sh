@@ -4,7 +4,8 @@ set -euxo pipefail
 
 # Start gazebo and record its screen.
 
-OUTFILE=demo.mkv
+mkdir -p out
+OUTFILE=out/demo.mkv
 rm -f $OUTFILE
 
 frame_w=1280

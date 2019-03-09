@@ -1,0 +1,13 @@
+version: 2
+
+jobs:
+    build:
+        docker:
+            - image: nicolov/gazebo-headless-docker
+        steps:
+            - checkout
+            - run:
+                scripts/run-demo.sh
+            - store_artifacts:
+                path: out
+
