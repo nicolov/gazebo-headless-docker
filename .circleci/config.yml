@@ -3,7 +3,7 @@ version: 2
 jobs:
     build:
         docker:
-            - image: nicolov/gazebo-headless-docker
+            - image: nicolov/gazebo-headless-docker:0.0.1
         steps:
             - checkout
             - run:
