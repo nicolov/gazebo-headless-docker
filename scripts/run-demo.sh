@@ -19,7 +19,7 @@ pid_xvfb=($!)
 sleep 1
 
 # Enable LLVMpipe
-export LD_LIBRARY_PATH=/opt/llvmpipe/lib:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/opt/llvmpipe/lib:${LD_LIBRARY_PATH:-}
 
 # Start gazebo
 gazebo --verbose /usr/share/gazebo-9/worlds/empty.world &
