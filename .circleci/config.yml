@@ -7,7 +7,10 @@ jobs:
         steps:
             - checkout
             - run:
-                scripts/run-demo.sh
+                scripts/run-demo.sh && true
+            # The actual test is whether the video file was created
+            - run:
+                file out/demo.mkv
             - store_artifacts:
                 path: out
 
