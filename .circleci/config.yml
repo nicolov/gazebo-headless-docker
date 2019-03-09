@@ -6,11 +6,9 @@ jobs:
             - image: nicolov/gazebo-headless-docker:0.0.1
         steps:
             - checkout
-            - run:
-                scripts/run-demo.sh && true
             # The actual test is whether the video file was created
             - run:
-                file out/demo.mkv
+                scripts/run-demo.sh || file out/demo.mkv
             - store_artifacts:
                 path: out
 
