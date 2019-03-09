@@ -13,4 +13,4 @@ This repo uses [LLVMpipe](https://www.mesa3d.org/llvmpipe.html), a
 software OpenGL renderer that allows Gazebo to run without a GPU. `scripts/run-demo.sh`
 is a demo script that records the screen output from a simple Gazebo session.
 
-For information about usage, follow the CI configuration in `.circleci/config.yml`.
+For information about usage, follow the CI configuration in `.circleci/config.yml`. [Output video](https://6-174678911-gh.circle-artifacts.com/0/root/project/out/demo.mkv) straight from the CircleCI artifacts.
