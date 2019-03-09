@@ -46,6 +46,17 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 #
+# Other things for ROS
+
+RUN apt-get update && apt-get install -q -y \
+	ninja-build python-pip python-dev python-wstool \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN pip install -U \
+    catkin-tools \
+    jinja2
+
+#
 # Gazebo
 # from https://github.com/osrf/docker_images/blob/e1b8c1ff5713777250ce44c7558c394a02c4f72a/gazebo/9/ubuntu/bionic/gzserver9/Dockerfile
 
@@ -58,7 +69,7 @@ RUN . /etc/os-release \
 
 # install gazebo packages
 RUN apt-get update && apt-get install -q -y \
-    gazebo9=9.6.0-1* \
+    gazebo9 libgazebo9-dev \
     && rm -rf /var/lib/apt/lists/*
 
 # setup entrypoint
@@ -84,7 +95,7 @@ RUN /tmp/build-mesa.sh && rm /tmp/build-mesa.sh
 # Screen grabbing and misc stuff
 
 RUN apt-get update && apt-get install -q -y \
-	ffmpeg xvfb vim tmux htop xdotool \
+	ffmpeg xvfb vim tmux htop xdotool rsync \
     && rm -rf /var/lib/apt/lists/*
 
 #
