@@ -98,6 +98,9 @@ RUN apt-get update && apt-get install -q -y \
 	ffmpeg xvfb vim tmux htop xdotool rsync \
     && rm -rf /var/lib/apt/lists/*
 
+RUN pip install -U \
+    numpy toml
+
 #
 #
 
